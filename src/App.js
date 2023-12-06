@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import style from './style/component.module.css';
+import { useState } from 'react';
+import Home from './components/Home';
+import Login from './components/Login';
+import Todos from './components/Todos';
+import Posts from './components/Posts';
+import Albums from './components/Albums';
+import { Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={style.App}>
+      <Routes>
+        <Route path="/" element={<Login />} />
+          <Route path="home/:id" element={<Home />} />
+          <Route path="todos/:id" element={<Todos />} />
+          <Route path="posts/:id" element={<Posts />} />
+          <Route path="albums/:id" element={<Albums />} />
+          <Route path="/*" element={<h1>404</h1>} />
+      </Routes>
     </div>
   );
 }
+
+
+
+
+
+
 
 export default App;
