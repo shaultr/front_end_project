@@ -2,7 +2,7 @@
 
 יש לרשום את השורה הבאה בתיקיה server
 
-                                                                                                                        json-server --watch db.json --port 3500
+             json-server --watch db.json --port 3500                                                                                                           
 
 todos:
 הפונקציות הוספה/עדכון/עדכון מצב מתרחשות בserver
